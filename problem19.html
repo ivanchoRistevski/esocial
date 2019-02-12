@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <p id="test"></p>
+        <script>
+            d1 = new Date(1900,1,1);
+            d2 = new Date(2000,12, 31);
+            // function solution(day, d1, d2) {
+            //     var ndenovi = 1 + Math.round((d2-d1) / (24*3600*1000));
+            //     var sum = function(a,b) {
+            //         return a + Math.floor(( ndenovi + (d1.getDay() + 6 - b) % 7) / 7);
+            //     }
+            //     return day(sum, 0);                
+            // }
+            // не успеав да ја решам сам. успешно изброив колку Недели има, но не колку од нив паѓаат на 1ви од месецот.
+            function solution() {
+                var n = 0, dow = 2;
+                var months = [31, 0, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+                for (var y = 1901; y <= 2000; y++) {
+                    months[1] = 28 + (y % 4 === 0 && y % 100 !== 0 || y % 400 === 0);
+                    for (var month of months) {
+                        dow+= month % 7;
+                        if (dow % 7 === 0) {
+                        n++;
+                        }
+                    }
+                }
+                return n;
+            }
+            // var nedeli = solution(0, d1,d2);
+        document.getElementById("test").innerHTML = solution();
+           
+        </script>
+    </body>
+</html>
