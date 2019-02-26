@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <p id="test"></p>
+        <script>
+            var i = 1,j,max = 0,t,r;
+            for (i = 500; i < 1000; i++) {
+                for (j = 500; j < 1000; j++) {
+                    t = i * j;
+                    r = reverseNumber(t);
+                    if (t == r && t > max) {
+                        max = t;
+                        break;
+                    }                    
+                }             
+            }
+            function reverseNumber(n)
+            {
+                n = n + "";
+                return n.split("").reverse().join("");
+            }
+            document.getElementById("test").innerHTML = max;
+        </script>
+    </body>
+</html>

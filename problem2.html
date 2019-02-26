@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <p id="test"></p>
+        <script>
+            var i = 1,j = 2,max = 0, temp;
+            while (i < 4000000) {
+                temp = j;               
+                if (j % 2 === 0) {
+                    max += j;
+                }
+                j += i;
+                i = temp;
+            }
+            document.getElementById("test").innerHTML = max;
+        </script>
+    </body>
+</html>

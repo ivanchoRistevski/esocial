@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <p id="test"></p>
+        <script>
+            var i = 1000,j,max = 0,t = true,r;
+            while (1) {
+                i++;
+                r = 0;
+                for (j = 1; j <= 20; j++) {
+                    if (i % j == 0) {
+                        r++;
+                    }
+                }
+                if (r == 20) {
+                    break;
+                }
+            }
+
+            document.getElementById("test").innerHTML = i;
+        </script>
+    </body>
+</html>
